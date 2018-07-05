@@ -3,20 +3,37 @@ package com.jda.utility;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**utility program
+ * @author Shravan
+ *
+ */
 public class Utility {
 Scanner scanner;
+/**
+ * Constructor
+ */
 public Utility(){
 	scanner=new Scanner(System.in);
 }
+/**this method is used to get the input 
+ * @return
+ */
 public String getInputName(){
 	String name=scanner.next();
 	return name;
 	
 }
+/**this method is used to get input number
+ * @return the input number
+ */
 public int getNoOfFlips(){
 	int numberOfFlips=scanner.nextInt();
 	return numberOfFlips;
 }
+/**this method is used for knowing whether it is leap year
+ * @param year = input year given by user for checking leap year
+ * @return boolean value whether it is leap year or not
+ */
 public boolean isLeapyear(int year){
 	boolean check;
 	if (year%400==0)
@@ -29,26 +46,27 @@ public boolean isLeapyear(int year){
 		check=false;
 	return check;
 }
+/** this method is for replacing string
+ * @param template is for initializing the template for printing
+ * @param name given by the user input to replace in the template
+ * @return modified template
+ */
 public String replaceStr(String template,String name){
 	template=template.replaceAll("<<UserName>>",name);
 	return template;
 }
+/** this method is for printing power table of 2 until give value of power
+ * @param power value given by input user 
+ */
 public void getTable(int power){
-	ArrayList<Integer> leapYears=new ArrayList<Integer>();
- double value=Math.pow(2,power);
- int count=1;
-	for(int i=2;i<=value;i+=2){
-		System.out.println("2 * "+count+" = "+i);
-      count++;	
-      if(isLeapyear(i)){
-      	leapYears.add(i);
-      }
-	}
-	System.out.println("THe leap years are");
-	for(int i=0;i<leapYears.size();i++){
-		System.out.println(leapYears.get(i));
+	for(int i=0;i<=power;i++){
+		System.out.println(Math.pow(2,i));
 	}
 }
+/**this method is used for printing harmonic sum
+ * @param value is the integer to which we have to find harmonic sum 
+ * @return harmonic sum
+ */
 public double printHarmonic(int value){
 	double harmonic=0;
 	for(double i=1;i<=value;i++){
@@ -56,6 +74,9 @@ public double printHarmonic(int value){
 	}
 	return harmonic;
 }
+/**this method is for printing prime factors
+ * @param value is the number to which we have to find prime factors
+ */
 public void printFactors(int value){
 	ArrayList<Integer> factors=new ArrayList<Integer>();
 	for(int i=1;i*i<=value;i++){
@@ -72,6 +93,10 @@ public void printFactors(int value){
 	}}
 	
 }
+	/**to check whether the number is prime
+	 * @param value is the input number given by user
+	 * @return boolean value whether it is prime or not
+	 */
 	public boolean isPrime(int value){
 	int	count=0;
 	for(int i=1;i<=value;i++){
@@ -83,6 +108,37 @@ public void printFactors(int value){
 	else
 		return false;
 	}
+	/** gambler win percent
+	 * @param stake amount gambler has
+	 * @param goal amount gambler has to win 
+	 * @param noOfGames
+	 */
+	public void gamble(int stake, int goal, int noOfGames) {
+		double gamesPlayed=0;
+		double gamesWon=0;
+		while(gamesPlayed<noOfGames){
+			double stk=stake;
+		while(!(stk>=goal||stk==0)){
+			double check=Math.random();
+			if(check>=0.5)
+				stk++;
+			else
+				stk--;
+		}
+		if(stk==goal){
+			gamesWon++;
+		}
+		gamesPlayed++;
+	}
+		
+		System.out.println("No of games won"+gamesWon);
+		System.out.println("No of games Lost"+(gamesPlayed-gamesWon));
+		System.out.println("percent of wins"+(gamesWon*100/gamesPlayed));
+	}
+/** this method is for getting heads vs tails count
+ * @param flips
+ * @return percent of heads
+ */
 public double getFlip(int flips){
 	double countOfheads=0.0;
 	for(int i=1;i<=flips;i++){
@@ -93,7 +149,7 @@ public double getFlip(int flips){
 	}
 	double percentofheads;
 	percentofheads=countOfheads*100/flips;
-	System.out.println(countOfheads);
+	System.out.println("Heads count "+countOfheads);
 	return percentofheads;
 }
 }

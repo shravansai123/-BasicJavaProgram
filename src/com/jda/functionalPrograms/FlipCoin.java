@@ -10,6 +10,6 @@ public class FlipCoin {
 		int number= util.getNoOfFlips();
 		double percentofheads=util.getFlip(number);
 		double percentofTails=100.00-percentofheads;
-		System.out.println(percentofheads +"vs"+percentofTails);
+		System.out.println(percentofheads +" % Heads "+"vs "+percentofTails+" % Tails");
 	}
 }
