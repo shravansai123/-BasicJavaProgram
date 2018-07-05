@@ -56,6 +56,33 @@ public double printHarmonic(int value){
 	}
 	return harmonic;
 }
+public void printFactors(int value){
+	ArrayList<Integer> factors=new ArrayList<Integer>();
+	for(int i=1;i*i<=value;i++){
+		if(value%i==0){
+			if(isPrime(i))
+			factors.add(i);
+			if(isPrime(value/i))
+			factors.add(value/i);
+		}
+	}
+	if(factors.size()>0){
+	for(int i=0;i<factors.size();i++){
+		System.out.println(factors.get(i));
+	}}
+	
+}
+	public boolean isPrime(int value){
+	int	count=0;
+	for(int i=1;i<=value;i++){
+	if(value%i==0)
+		count++;
+	}
+	if(count==2)
+		return true;
+	else
+		return false;
+	}
 public double getFlip(int flips){
 	double countOfheads=0.0;
 	for(int i=1;i<=flips;i++){
