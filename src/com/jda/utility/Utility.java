@@ -49,6 +49,13 @@ public void getTable(int power){
 		System.out.println(leapYears.get(i));
 	}
 }
+public double printHarmonic(int value){
+	double harmonic=0;
+	for(double i=1;i<=value;i++){
+		harmonic+=1/i;
+	}
+	return harmonic;
+}
 public double getFlip(int flips){
 	double countOfheads=0.0;
 	for(int i=1;i<=flips;i++){
