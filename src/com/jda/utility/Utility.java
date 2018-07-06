@@ -1,7 +1,10 @@
 package com.jda.utility;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.Set;
 
 /**utility program
  * @author Shravan
@@ -30,6 +33,36 @@ public int getNoOfFlips(){
 	int numberOfFlips=scanner.nextInt();
 	return numberOfFlips;
 }
+/**method to take input numbers from user
+ * @param noOfRandomNumbers to give the number of input numbers to check
+ * @return the array of coupon numbers
+ */
+public int[] getArray(int noOfRandomNumbers){
+int arr[]=new int[noOfRandomNumbers];
+	for(int i=0;i<noOfRandomNumbers;i++){
+	arr[i]=(scanner.nextInt());
+}
+	return arr;
+	}
+/**this method is used to print number of random numbers required 
+ * @param couponNumbers array of given coupon numbers
+ * @param totalCoupons total number of coupons 
+ */
+public void numberOfRandomNumbers(int[] couponNumbers,int totalCoupons){
+	Random x= new Random();
+	Set<Integer> arr=new HashSet<Integer>();
+	int i=0;
+	while(i<couponNumbers.length){
+		int check=x.nextInt(totalCoupons);
+		arr.add(check);
+		for(int j=0;j<couponNumbers.length;j++)
+		if(check==couponNumbers[j])
+			i++;
+		}
+	
+	System.out.println("The number of random numbers generated "+arr.size());
+}
+
 /**this method is used for knowing whether it is leap year
  * @param year = input year given by user for checking leap year
  * @return boolean value whether it is leap year or not
