@@ -1,5 +1,6 @@
 package com.jda.utility;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
@@ -62,7 +63,77 @@ public void numberOfRandomNumbers(int[] couponNumbers,int totalCoupons){
 	
 	System.out.println("The number of random numbers generated "+arr.size());
 }
+/**this method is used ton print integer array values
+ * @param row no of rows
+ * @param col no of columns
+ */
+public void twoDInteger(int row,int col){
+	PrintWriter output = new PrintWriter(System.out);
+	int arr[][]=new int[row][col];
+	for(int i=0;i<row;i++){
+		for(int j=0;j<col;j++){
+		 arr[i][j]=scanner.nextInt();
+		}
+	}
+	for(int i=0;i<row;i++){
+		for(int j=0;j<col;j++){
+			output.print(arr[i][j]+"\t");
+		}
+		output.println();
+	}
+	output.flush();
+	output.close();
+	}
 
+
+
+/**this is used to print double array values
+ * @param row no of rows
+ * @param col no of columns
+ */
+public void twoDDouble(int row,int col){
+	PrintWriter output = new PrintWriter(System.out);
+	double arr[][]=new double[row][col];
+	for(int i=0;i<row;i++){
+		for(int j=0;j<col;j++){
+		 arr[i][j]=scanner.nextDouble();
+		}
+	}
+	for(int i=0;i<row;i++){
+		for(int j=0;j<col;j++){
+			output.print(arr[i][j]+"\t");
+		}
+		output.println();
+	}
+
+	output.flush();
+	output.close();
+	}
+
+
+
+/**this method is used to print 2d values of boolean
+ * @param row no of rows
+ * @param col no of columns
+ */
+public void twoDBoolean(int row,int col){
+	PrintWriter output = new PrintWriter(System.out);
+	boolean arr[][]=new boolean[row][col];
+	for(int i=0;i<row;i++){
+		for(int j=0;j<col;j++){
+		 arr[i][j]=scanner.nextBoolean();
+		}
+	}
+	for(int i=0;i<row;i++){
+		for(int j=0;j<col;j++){
+			output.print(arr[i][j]+"\t");
+		}
+		output.println();
+	}
+
+	output.flush();
+	output.close();
+	}
 /**this method is used for knowing whether it is leap year
  * @param year = input year given by user for checking leap year
  * @return boolean value whether it is leap year or not
