@@ -49,20 +49,26 @@ int arr[]=new int[noOfRandomNumbers];
  * @param couponNumbers array of given coupon numbers
  * @param totalCoupons total number of coupons 
  */
-public void numberOfRandomNumbers(int[] couponNumbers,int totalCoupons){
+public void numberOfRandomNumbers(int totalCoupons){
 	Random x= new Random();
-	Set<Integer> arr=new HashSet<Integer>();
+Set<Integer> arr=new HashSet<Integer>();
 	int i=0;
-	while(i<couponNumbers.length){
+	int count=0;
+	while(i<totalCoupons){
 		int check=x.nextInt(totalCoupons);
+		count++;
+		if(!(arr.contains(check))){
 		arr.add(check);
-		for(int j=0;j<couponNumbers.length;j++)
-		if(check==couponNumbers[j])
-			i++;
+		i++;
+		}
 		}
 	
-	System.out.println("The number of random numbers generated "+arr.size());
+	System.out.println("The number of random numbers generated "+count);
+	System.out.println(count);
+
 }
+
+
 /**this method is used ton print integer array values
  * @param row no of rows
  * @param col no of columns
@@ -256,4 +262,68 @@ public double getFlip(int flips){
 	System.out.println("Heads count "+countOfheads);
 	return percentofheads;
 }
+
+	/**
+	 * this is used to get the triplets whoose sum is 0
+	 * 
+	 * @param value
+	 *           number of integers
+	 * 
+	 * @param arr
+	 *           integers to be given to find out the triplets
+	 * 
+	 */
+	public void getTriplets(int value, int arr[]) {
+		int count = 0;
+		for (int i = 0; i < value - 2; i++) {
+			for (int j = i + 1; j < value - 1; j++) {
+				for (int k = j + 1; k < value; k++) {
+					if (arr[i] + arr[j] + arr[k] == 0) {
+						count++;
+						System.out.println(arr[i] + "\t" + arr[j] + "\t" + arr[k]);
+					}
+				}
+			}
+		}
+		System.out.println("the number of triplets = " + count);
+	}
+	/**this is used to get the distance from origin
+	 * @param x X coordinate 
+	 * @param y Y coordinate
+	 */
+	public double getDistance(double x,double y){
+		double z=Math.pow(Math.pow(x, 2)+Math.pow(y,2),0.5);
+return z;
+	}
+	/**this is used to get elapsed time of the function 
+	 * @return elapsed time
+	 */
+	public double getElapsedTime(){
+		double startTime = System.currentTimeMillis();
+		for(int i=1;i<10000000;i++){
+		getDistance(2000000,500000000);
+		}
+		double elapsedTime=System.currentTimeMillis()-startTime;
+		return elapsedTime;
+	}
+	/**this is used to get the quadratic roots
+	 * @param a
+	 * @param b
+	 * @param c
+	 */
+	public void getQuadraticRoots(int a,int b, int c){
+		double delta= (b*b) - (4*a*c);
+		double x=(-b+ Math.sqrt(delta))/(2*a);
+		double y=(-b- Math.sqrt(delta))/(2*a);
+		System.out.println("the roots are "+x+" "+y);
+	}
+	/** this is the winchill equation
+	 * @param t Temperature
+	 * @param v Wind speed
+	 * @return the effective temperature
+	 */
+	public double getWinchill(double t,double v){
+		double w=35.74+(0.6215*t)+((0.4275*t)-35.75*(Math.pow(v, 0.16)));
+		return w;
+	}
 }
