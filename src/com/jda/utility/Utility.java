@@ -1,7 +1,9 @@
 package com.jda.utility;
 
 import java.io.PrintWriter;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
@@ -326,4 +328,48 @@ return z;
 		double w=35.74+(0.6215*t)+((0.4275*t)-35.75*(Math.pow(v, 0.16)));
 		return w;
 	}
+	public boolean checkAnagrams(String str1,String str2){
+		str1=str1.replaceAll("\\s","" );
+		str2=str2.replaceAll("\\s","" );
+		str1=str1.toLowerCase();
+		str2=str2.toLowerCase();
+		char[] str1array=str1.toCharArray();
+		char[] str2array=str2.toCharArray();
+		Arrays.sort(str1array);
+		Arrays.sort(str2array);		
+		if(Arrays.equals(str1array,str2array) ){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public ArrayList<Integer> getPrime(){
+		ArrayList<Integer> arr=new ArrayList<Integer>();
+		for(int i=1;i<1000;i++){
+			if(isPrime(i)){
+				arr.add(i);
+			}
+		}
+		return arr;
+	}
+	public void printArrayList(ArrayList<Integer> arr){
+		for(int i=0;i<arr.size();i++){
+			System.out.println(arr.get(i));
+		}
+	}
+	public boolean palindrome(String str){
+		boolean ch=true;
+		char[] str1array=str.toCharArray();
+		int j=str1array.length-1;
+		for(int i=0;i<=j;i++,j--){
+			if(!(str1array[i]==str1array[j])){
+				ch=false;
+				break;
+			}
+			ch=true;
+		}
+			return ch;
+	}
+	
 }
