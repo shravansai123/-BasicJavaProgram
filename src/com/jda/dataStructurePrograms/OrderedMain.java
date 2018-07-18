@@ -6,17 +6,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-import com.jda.utility.LinkedList;
 import com.jda.utility.LinkedListNode;
+import com.jda.utility.OrderedList;
 import com.jda.utility.Utility;
 
-public class UnorderedList {
+public class OrderedMain {
 	/**
 	 * @param args
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		LinkedList<String> data = new LinkedList<String>();
+		OrderedList<String> data = new OrderedList<String>();
 		File f1 = new File("C:\\Users\\1022270\\Desktop\\filetest.txt");
 		Scanner scanner = new Scanner(f1);
 		while (scanner.hasNext()) {
