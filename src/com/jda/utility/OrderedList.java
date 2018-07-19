@@ -17,6 +17,8 @@ public class OrderedList<T extends Comparable<T>> {
 				temp = temp.next;
 			}
 
+			
+			//for adding last
 			if (temp == null) {
 				prev.next = node;
 				node.next = null;

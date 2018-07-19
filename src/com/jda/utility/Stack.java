@@ -38,7 +38,7 @@ public class Stack<T> {
 
 	public T pop() throws Exception {
 		if (this.isEmpty()) {
-			throw new Exception("Stack is empty. Can not remove element.");
+			throw new Exception("Stack is empty");
 		}
 		T entry = this.stackArr[top--];
 		return entry;

@@ -13,7 +13,7 @@ public class QueueCashCounter {
 		int queueSize = scanner.nextInt();
 		Queue<Double> data = new Queue<Double>(queueSize);
 		for (int i = 0; i < queueSize; i++) {
-			System.out.println("withdrawl or deposit");
+			System.out.println("withdrawl or deposit for the user "+(i+1));
 			String purpose = scanner.next();
 			if (purpose.compareTo("withdrawl")==0) {
 				System.out.println("Enter the amount to be withdrawn");

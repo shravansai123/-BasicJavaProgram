@@ -4,7 +4,7 @@ import com.jda.utility.Stack;
 
 public class StackMain {
 	public static void main(String[] args) throws Exception {
-		String inputData = "(5+6)∗(7+8)/((4+3))(5+6)∗(7+8)/(4+3)";
+		String inputData = "5+6)∗(7+8)/((4+3))(5+6)∗(7+8)/(4+3)";
 		Stack<Character> value = new Stack<Character>(100);
 		boolean check = true;
 		char[] data = inputData.toCharArray();
