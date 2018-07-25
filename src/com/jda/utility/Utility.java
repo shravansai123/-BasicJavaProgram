@@ -44,6 +44,10 @@ public class Utility {
 		int numberOfFlips = scanner.nextInt();
 		return numberOfFlips;
 	}
+	public double getValue(){
+		double value = scanner.nextInt();
+		return value;
+	}
 
 	/**
 	 * method to take input numbers from user

@@ -1,0 +1,19 @@
+{"Pulses":[
+{
+Name :dal 
+Weight :100.0 
+Price Per Kg30.0
+}
+],"Wheat":[
+{
+Name :whe 
+Weight :40.0 
+Price Per Kg50.0
+}
+],"Rice":[
+{
+Name :white 
+Weight :5.0 
+Price Per Kg45.0
+}
+]}
