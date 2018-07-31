@@ -1,0 +1,17 @@
+{"Transaction":[
+{
+"Stock Name" : "apple"
+"Customer Name" : "sai"
+"Number of Stocks" : "1.0"
+"Amount" : "200.0"
+"date" : "20180730_052504"
+}
+,
+{
+"Stock Name" : "microsoft"
+"Customer Name" : "shravan"
+"Number of Stocks" : "1.0"
+"Amount" : "1000.0"
+"date" : "20180730_052515"
+}
+]}

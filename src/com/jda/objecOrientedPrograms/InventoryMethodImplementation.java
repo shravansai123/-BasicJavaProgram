@@ -22,7 +22,7 @@ public class InventoryMethodImplementation implements InventoryMethods {
 		JSONParser parser = new JSONParser();
 		HashMap<String, LinkedList<Inventory>> inventoryMap = new HashMap<String, LinkedList<Inventory>>();
 		try {
-			Object obj = parser.parse(new FileReader("/home/bridgelabz/Desktop/pulses.txt"));
+			Object obj = parser.parse(new FileReader("/home/bridgelabz/workspace/basicjavaPrograms/-BasicJavaProgram/final2.json"));
 			JSONObject jsonObject = (JSONObject) obj;
 			String[] inventoryName = { "Rice", "Pulses", "Wheat" };
 			for (String i : inventoryName) {
@@ -33,8 +33,8 @@ public class InventoryMethodImplementation implements InventoryMethods {
 					Inventory inven = new Inventory();
 					inven.setName((String) ((JSONObject) inventory).get("Name"));
 					inven.setWeight(Double.parseDouble((String) ((JSONObject) inventory).get("Weight")));
-					inven.setPrice(Double.parseDouble((String) ((JSONObject) inventory).get("Price per kg")));
-					list.add(inven);
+					inven.setPrice(Double.parseDouble((String) ((JSONObject) inventory).get("Price Per Kg")));
+					list.add(inven);				
 				}
 				inventoryMap.put(i, list);
 			}
@@ -120,7 +120,6 @@ public class InventoryMethodImplementation implements InventoryMethods {
 	}
 
 	public void valueOfInventory() {
-
 		HashMap<String, LinkedList<Inventory>> inventoryMap = read();
 		double totalInventory=0;
 		Iterator iterator = inventoryMap.keySet().iterator();

@@ -1,19 +1,37 @@
 {"Pulses":[
 {
-Name :dal 
-Weight :100.0 
-Price Per Kg30.0
+"Name" : "dal  "
+"Weight" : "100.0"
+"Price Per Kg" : "30.0"
 }
 ],"Wheat":[
 {
-Name :whe 
-Weight :40.0 
-Price Per Kg50.0
+"Name" : "whe  "
+"Weight" : "40.0"
+"Price Per Kg" : "50.0"
 }
 ],"Rice":[
 {
-Name :white 
-Weight :5.0 
-Price Per Kg45.0
+"Name" : "Brown  "
+"Weight" : "50.0"
+"Price Per Kg" : "40.0"
+}
+,
+{
+"Name" : "white  "
+"Weight" : "5.0"
+"Price Per Kg" : "45.0"
+}
+,
+{
+"Name" : "basmathi  "
+"Weight" : "120.0"
+"Price Per Kg" : "230.0"
+}
+,
+{
+"Name" : "basmmmm "
+"Weight" : "123.0"
+"Price Per Kg" : "234.0"
 }
 ]}

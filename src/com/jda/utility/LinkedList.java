@@ -2,7 +2,7 @@ package com.jda.utility;
 
 import com.jda.utility.LinkedListNode;
 
-public class LinkedList<T extends Comparable<T>> {
+public class LinkedList<T> {
 	private LinkedListNode<T> first = null;
 
 	public void add(LinkedListNode<T> node) {
@@ -53,7 +53,7 @@ public class LinkedList<T extends Comparable<T>> {
 		}
 		LinkedListNode<T> p = first;
 		do {
-			if (find.compareTo(p.value) == 0) {
+			if (find.toString().compareTo(p.value.toString()) == 0) {
 				check = p;
 				break;
 			} else {

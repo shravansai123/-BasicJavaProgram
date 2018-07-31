@@ -30,7 +30,8 @@ public class Inventory {
 	}
 	@Override
 	public String toString(){
-		String x="\n{\n"+"Name :"+name+" \n" +"Weight :"+weight+" \n"+"Price Per Kg"+pricePerKg+"\n"+"}\n";
+		String x="\n{\n"+"\"Name\" : \""+name+" \"\n" +"\"Weight\" : \""+weight+"\"\n"+"\"Price Per Kg\" : \""+pricePerKg+"\"\n"+"}\n";
 		return x;
 	}
+	
 }

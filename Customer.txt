@@ -1,0 +1,19 @@
+{"Customer":[
+{
+"Name" : "sai"
+"Mobile" : "1234567890"
+"Amount" : "19800.0"
+}
+,
+{
+"Name" : "shravan"
+"Mobile" : "1232347890"
+"Amount" : "44000.0"
+}
+,
+{
+"Name" : "shrav"
+"Mobile" : "1211567890"
+"Amount" : "12500.0"
+}
+]}
